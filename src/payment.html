@@ -9,15 +9,7 @@
 
     <h2>Enter Payment Details</h2>
     
-        
-    </form>
-	
- 
-
-
- <h3>Response from NAB:</h3>
-    <iframe name="nab-iframe" id="nab-iframe" style="width: 100%; height: 300px; border: 1px solid #ccc;">
-	<form action="https://demo.transact.nab.com.au/directpost/crnmanage" method="POST"  id ="nabform">
+        <form action="https://demo.transact.nab.com.au/directpost/crnmanage" method="POST" target="nab-iframe" id ="nabform">
 
         <label>Card Number:</label>
         <input type="text" id="EPS_CARDNUMBER" value="4444333322221111"><br>
@@ -49,8 +41,17 @@
         <label>EPS_CRN:</label>
         <input type="text" id="EPS_CRN" value="NEWCRN20250228042938">
         <input type="hidden" id="EPS_RESULTPARAMS" value="TRUE">
-		<button type="submit" >Submit</button>
-    <p id="response-message"></p> <!--onClick="postjoin(event);"
+    </form>
+	
+ <!-- <button type="buttom" onClick="postjoin(event);">Submit</button> -->
+         <button type="submit">Submit</button>
+
+    <p id="response-message"></p>
+
+
+ <h3>Response from NAB:</h3>
+    <iframe name="nab-iframe" id="nab-iframe" style="width: 100%; height: 300px; border: 1px solid #ccc;">
+	<p>iframes are not supported by your browser.</p>
 	</iframe>
 
 <script>
