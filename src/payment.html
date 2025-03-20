@@ -9,7 +9,8 @@
 
     <h2>Enter Payment Details</h2>
     
-    <form id="nab-form">
+        <form action="https://demo.transact.nab.com.au/directpost/crnmanage" method="POST" target="nab-iframe">
+
         <label>Card Number:</label>
         <input type="text" id="EPS_CARDNUMBER" value="4444333322221111"><br>
 
@@ -41,61 +42,17 @@
         <input type="text" id="EPS_CRN" value="NEWCRN20250228042938">
         <input type="hidden" id="EPS_RESULTPARAMS" value="TRUE">
     </form>
-
-    <button onclick="saveFormData()">Save & Continue</button>
-    <button onclick="finalSubmit()">Final Submit</button>
-
+	
+ <button type="submit">Submit</button>
     <p id="response-message"></p>
 
-    <script>
-        // Store form data in localStorage so it persists across steps
-        function saveFormData() {
-            let formData = {
-                EPS_CARDNUMBER: document.getElementById("EPS_CARDNUMBER").value,
-                EPS_EXPIRYMONTH: document.getElementById("EPS_EXPIRYMONTH").value,
-                EPS_EXPIRYYEAR: document.getElementById("EPS_EXPIRYYEAR").value,
-                EPS_CardCCV: document.getElementById("EPS_CardCCV").value,
-                CardType: document.getElementById("CardType").value,
-                CreditCardAccountName: document.getElementById("CreditCardAccountName").value,
-                EPS_MERCHANT: document.getElementById("EPS_MERCHANT").value,
-                EPS_TYPE: document.getElementById("EPS_TYPE").value,
-                EPS_ACTION: document.getElementById("EPS_ACTION").value,
-                EPS_FINGERPRINT: document.getElementById("EPS_FINGERPRINT").value,
-                EPS_TIMESTAMP: document.getElementById("EPS_TIMESTAMP").value,
-                EPS_RESULTURL: document.getElementById("EPS_RESULTURL").value,
-                EPS_CRN: document.getElementById("EPS_CRN").value,
-                EPS_RESULTPARAMS: document.getElementById("EPS_RESULTPARAMS").value
-            };
 
-            localStorage.setItem("nabFormData", JSON.stringify(formData));
-            alert("Data saved! Proceed to the final step.");
-        }
+ <h3>Response from NAB:</h3>
+    <iframe name="nab-iframe" id="nab-iframe" style="width: 100%; height: 300px; border: 1px solid #ccc;">
+	<p>iframes are not supported by your browser.</p>
+	</iframe>
 
-        // Final form submission using dynamic form submission
-        function finalSubmit() {
-            let formData = JSON.parse(localStorage.getItem("nabFormData"));
-            if (!formData) {
-                alert("No data found. Please fill in the form first.");
-                return;
-            }
 
-            // Create a hidden form dynamically
-            let form = document.createElement("form");
-            form.method = "POST";
-            form.action = "https://demo.transact.nab.com.au/directpost/crnmanage";
-
-            for (const key in formData) {
-                let input = document.createElement("input");
-                input.type = "hidden";
-                input.name = key;
-                input.value = formData[key];
-                form.appendChild(input);
-            }
-
-            document.body.appendChild(form);
-            form.submit(); // Automatically submit the form
-        }
-    </script>
 
 </body>
 </html>
