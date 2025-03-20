@@ -7,9 +7,9 @@
 </head>
 <body>
 
-    <h2>Submit NAB Direct Post Form D:\git\nabdemo\src\index.html</h2>
+    <h2>Submit NAB Direct Post Form </h2>
     
-    <form id="nab-form" action="https://demo.transact.nab.com.au/directpost/crnmanage" method="POST">
+    <form id="nab-form" action="https://demo.transact.nab.com.au/directpost/crnmanage" method="POST" target="_blank">
         <label>Card Number:</label>
         <input type="text" name="EPS_CARDNUMBER" value="4444333322221111" required><br>
 
@@ -33,7 +33,7 @@
 		
 		<label>Timestamp:</label>
         <input type="text" name="EPS_TIMESTAMP" value="20250228042938"><br>
-        <input type="hidden" name="EPS_RESULTURL" value="https://purple-plant-0e0badc00.6.azurestaticapps.net/index.html"><br>
+        <input type="hidden" name="EPS_RESULTURL" value="https://purple-plant-0e0badc00.6.azurestaticapps.net/payment.html"><br>
 		
 		<label>Temp CRN:</label>
         <input type="text" name="EPS_CRN" value="NEWCRN20250228042938"><br>
@@ -45,53 +45,6 @@
     </form>
 
 
-
-    <h2>NAB Callback Response</h2>
-
-    <form>
-        <label>Expiry Date:</label>
-        <input type="text" id="expirydate" name="expirydate" readonly><br>
-
-        <label>Callback Status Code:</label>
-        <input type="text" id="callback_status_code" name="callback_status_code" readonly><br>
-
-        <label>Response Text:</label>
-        <input type="text" id="restext" name="restext" readonly><br>
-
-        <label>PAN (Card Number):</label>
-        <input type="text" id="pan" name="pan" readonly><br>
-
-        <label>CRN:</label>
-        <input type="text" id="CRN" name="CRN" readonly><br>
-
-        <label>Response Code:</label>
-        <input type="text" id="rescode" name="rescode" readonly><br>
-
-        <label>Cardholder Name:</label>
-        <input type="text" id="CreditCardAccountName" name="CreditCardAccountName" readonly><br>
-
-        <label>Card Type:</label>
-        <input type="text" id="CardType" name="CardType" readonly><br>
-    </form>
-
-    <script>
-        // Function to get URL parameters and populate form fields
-        function getQueryParams() {
-            const params = new URLSearchParams(window.location.search);
-            
-            document.getElementById("expirydate").value = params.get("expirydate") || "";
-            document.getElementById("callback_status_code").value = params.get("callback_status_code") || "";
-            document.getElementById("restext").value = params.get("restext") || "";
-            document.getElementById("pan").value = params.get("pan") || "";
-            document.getElementById("CRN").value = params.get("CRN") || "";
-            document.getElementById("rescode").value = params.get("rescode") || "";
-            document.getElementById("CreditCardAccountName").value = params.get("CreditCardAccountName") || "";
-            document.getElementById("CardType").value = params.get("CardType") || "";
-        }
-
-        // Call function on page load
-        window.onload = getQueryParams;
-    </script>
 	
 	
 </body>
