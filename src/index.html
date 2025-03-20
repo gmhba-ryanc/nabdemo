@@ -27,48 +27,22 @@
         <input type="hidden" name="EPS_MERCHANT" value="ZBI0110">
         <input type="hidden" name="EPS_TYPE" value="CRN">
         <input type="hidden" name="EPS_ACTION" value="ADDCRN">
-        <input type="text" name="EPS_FINGERPRINT" value="935521648bcb226c5e44314a3c2793d6af91593aa3914153c1fe9b6428bf7a4b">
-        <input type="text" name="EPS_TIMESTAMP" value="20250228042938">
-        <input type="hidden" name="EPS_RESULTURL" value="file:///C:/Users/ryanc/OneDrive%20-%20GMHBA%20LIMITED/Desktop/nab-post.html">
+		
+		<label>Fingerprint:</label>
+        <input type="text" name="EPS_FINGERPRINT" value="935521648bcb226c5e44314a3c2793d6af91593aa3914153c1fe9b6428bf7a4b"><br>
+		
+		<label>Timestamp:</label>
+        <input type="text" name="EPS_TIMESTAMP" value="20250228042938"><br>
+        <input type="hidden" name="EPS_RESULTURL" value="https://purple-plant-0e0badc00.6.azurestaticapps.net/nab-post.html">
         <input type="hidden" name="EPS_CRN" value="NEWCRN20250228042938">
-        <input type="hidden" name="EPS_RESULTPARAMS" value="TRUE">EPS_REDIRECT
+        <input type="hidden" name="EPS_RESULTPARAMS" value="TRUE">
         <input type="hidden" name="EPS_REDIRECT" value="TRUE">
 		
 
         <button type="submit">Submit</button>
     </form>
+
 	
-	<br />
-	
-	 <h2>NAB Callback Response</h2>
-
-    <form>
-        <label>Response Code:</label>
-        <input type="text" id="EPS_RESPONSECODE" name="EPS_RESPONSECODE" readonly><br>
-
-        <label>Response Text:</label>
-        <input type="text" id="EPS_RESPONSETEXT" name="EPS_RESPONSETEXT" readonly><br>
-
-        <label>Transaction Reference:</label>
-        <input type="text" id="EPS_TXNREFERENCE" name="EPS_TXNREFERENCE" readonly><br>
-
-        <label>CRN:</label>
-        <input type="text" id="EPS_CRN" name="EPS_CRN" readonly><br>
-    </form>
-
- <script>
-        // Function to get URL parameters
-        function getQueryParams() {
-            const params = new URLSearchParams(window.location.search);
-            document.getElementById("EPS_RESPONSECODE").value = params.get("EPS_RESPONSECODE") || "";
-            document.getElementById("EPS_RESPONSETEXT").value = params.get("EPS_RESPONSETEXT") || "";
-            document.getElementById("EPS_TXNREFERENCE").value = params.get("EPS_TXNREFERENCE") || "";
-            document.getElementById("EPS_CRN").value = params.get("EPS_CRN") || "";
-        }
-
-        // Call function on page load
-        window.onload = getQueryParams;
-    </script>
 	
 </body>
 </html>

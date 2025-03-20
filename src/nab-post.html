@@ -7,39 +7,6 @@
 </head>
 <body>
 
-    <h2>Submit NAB Direct Post Form</h2>
-    
-    <form id="nab-form" action="https://demo.transact.nab.com.au/directpost/crnmanage" method="POST">
-        <label>Card Number:</label>
-        <input type="text" name="EPS_CARDNUMBER" value="4444333322221111" required><br>
-
-        <label>Expiry Month:</label>
-        <input type="text" name="EPS_EXPIRYMONTH" value="11" required><br>
-
-        <label>Expiry Year:</label>
-        <input type="text" name="EPS_EXPIRYYEAR" value="28" required><br>
-
-        <label>CCV:</label>
-        <input type="text" name="EPS_CardCCV" value="123" required><br>
-
-        <input type="hidden" name="CardType" value="VISA">
-        <input type="hidden" name="CreditCardAccountName" value="John Doe">
-        <input type="hidden" name="EPS_MERCHANT" value="ZBI0110">
-        <input type="hidden" name="EPS_TYPE" value="CRN">
-        <input type="hidden" name="EPS_ACTION" value="ADDCRN">
-        <input type="text" name="EPS_FINGERPRINT" value="935521648bcb226c5e44314a3c2793d6af91593aa3914153c1fe9b6428bf7a4b">
-        <input type="text" name="EPS_TIMESTAMP" value="20250228042938">
-        <input type="hidden" name="EPS_RESULTURL" value="file:///C:/Users/ryanc/OneDrive%20-%20GMHBA%20LIMITED/Desktop/nab-post.html">
-        <input type="hidden" name="EPS_CRN" value="NEWCRN20250228042938">
-        <input type="hidden" name="EPS_RESULTPARAMS" value="TRUE">EPS_REDIRECT
-        <input type="hidden" name="EPS_REDIRECT" value="TRUE">
-		
-
-        <button type="submit">Submit</button>
-    </form>
-	
-	<br />
-	
 	 <h2>NAB Callback Response</h2>
 
     <form>
