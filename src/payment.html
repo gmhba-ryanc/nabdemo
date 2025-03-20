@@ -43,7 +43,7 @@
         <input type="hidden" id="EPS_RESULTPARAMS" value="TRUE">
     </form>
 	
- <button type="buttom" onClick="postjoin();">Submit</button>
+ <button type="buttom" onClick="postjoin(event);">Submit</button>
     <p id="response-message"></p>
 
 
@@ -52,12 +52,13 @@
 	<p>iframes are not supported by your browser.</p>
 	</iframe>
 
-<script laguaje="javascript">
+<script>
          function postjoin(event) {
+		  event.preventDefault();
         var form = document.getElementById("nabform");
         form.submit();
 
-        event.preventDefault();
+       
     }
     </script>
 
