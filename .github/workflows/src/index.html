@@ -40,35 +40,8 @@
 	
 	<br />
 	
-	 <h2>NAB Callback Response</h2>
 
-    <form>
-        <label>Response Code:</label>
-        <input type="text" id="EPS_RESPONSECODE" name="EPS_RESPONSECODE" readonly><br>
 
-        <label>Response Text:</label>
-        <input type="text" id="EPS_RESPONSETEXT" name="EPS_RESPONSETEXT" readonly><br>
-
-        <label>Transaction Reference:</label>
-        <input type="text" id="EPS_TXNREFERENCE" name="EPS_TXNREFERENCE" readonly><br>
-
-        <label>CRN:</label>
-        <input type="text" id="EPS_CRN" name="EPS_CRN" readonly><br>
-    </form>
-
- <script>
-        // Function to get URL parameters
-        function getQueryParams() {
-            const params = new URLSearchParams(window.location.search);
-            document.getElementById("EPS_RESPONSECODE").value = params.get("EPS_RESPONSECODE") || "";
-            document.getElementById("EPS_RESPONSETEXT").value = params.get("EPS_RESPONSETEXT") || "";
-            document.getElementById("EPS_TXNREFERENCE").value = params.get("EPS_TXNREFERENCE") || "";
-            document.getElementById("EPS_CRN").value = params.get("EPS_CRN") || "";
-        }
-
-        // Call function on page load
-        window.onload = getQueryParams;
-    </script>
 	
 </body>
 </html>
