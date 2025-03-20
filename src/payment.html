@@ -8,7 +8,7 @@
 <body>
 
     <h2>Enter Payment Details</h2>
-    
+    <div is="nab-payment-content">
         <form action="https://demo.transact.nab.com.au/directpost/crnmanage" method="POST" target="nab-iframe" id ="nabform">
 
         <label>Card Number:</label>
@@ -41,10 +41,11 @@
         <label>EPS_CRN:</label>
         <input type="text" id="EPS_CRN" value="NEWCRN20250228042938">
         <input type="hidden" id="EPS_RESULTPARAMS" value="TRUE">
-		<button type="submit">Submit</button>
- <!-- <button type="buttom" onClick="postjoin(event);">Submit</button> -->
+		<!-- <button type="submit">Submit</button> -->
+<button type="buttom" onClick="submitInNewWindow();">Submit</button> 
 		
     </form>
+	</div>
 	
          
 
@@ -56,14 +57,43 @@
 	<p>iframes are not supported by your browser.</p>
 	</iframe>
 
-<script>
-         function postjoin(event) {
-		  event.preventDefault();
-        var form = document.getElementById("nabform");
-        form.submit();
+ <script>
+        function submitInNewWindow() {
+            // Open a new window
+            let newWindow = window.open("", "NAB_Window", "width=800,height=600");
 
-       
-    }
+            if (!newWindow) {
+                alert("Popup blocked! Please allow popups for this site.");
+                return;
+            }
+
+            // Get the existing form and serialize its content
+            let form = document.getElementById("nabform");
+            let formHtml = `<form id="nabform" action="https://demo.transact.nab.com.au/directpost/crnmanage" method="POST">`;
+console.log('formelement', form.elements);
+            for (let element of form.elements) {
+                if (element.id) {
+                    formHtml += `<input type="text" name="${element.name}" id="${element.id}" value="${element.value}"><br>`;
+                }
+            }
+			formHtml += `<button type="submit">Submit</button>`;
+            formHtml += `</form>`;
+console.log(formHtml);
+            // Write the form into the new window and submit it
+            newWindow.document.write(`
+                <html>
+                <head><title>Processing Payment...</title></head>
+                <body>
+                    ${formHtml}
+                    <script>
+                        //document.getElementById("nabform").submit();
+                    <\/script>
+                </body>
+                </html>
+            `);
+
+            newWindow.document.close(); // Ensure the document is fully loaded
+        }
     </script>
 
 </body>
