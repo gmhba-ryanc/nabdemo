@@ -9,7 +9,7 @@
 
     <h2>Enter Payment Details</h2>
     
-        <form action="https://demo.transact.nab.com.au/directpost/crnmanage" method="POST" target="nab-iframe">
+        <form action="https://demo.transact.nab.com.au/directpost/crnmanage" method="POST" target="nab-iframe" id ="nabform">
 
         <label>Card Number:</label>
         <input type="text" id="EPS_CARDNUMBER" value="4444333322221111"><br>
@@ -54,7 +54,7 @@
 
 <script laguaje="javascript">
          function postjoin(event) {
-        var form = document.getElementById("myForm");
+        var form = document.getElementById("nabform");
         form.submit();
 
         event.preventDefault();
