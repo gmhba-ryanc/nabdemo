@@ -3,56 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAB Callback Response</title>
+    <title>Single Page NAB Form Submission</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 
-    <h2>NAB Callback Response</h2>
+    <h2>Enter Payment Details</h2>
 
-    <form>
-        <label>Expiry Date:</label>
-        <input type="text" id="expirydate" name="expirydate" readonly><br>
-
-        <label>Callback Status Code:</label>
-        <input type="text" id="callback_status_code" name="callback_status_code" readonly><br>
-
-        <label>Response Text:</label>
-        <input type="text" id="restext" name="restext" readonly><br>
-
-        <label>PAN (Card Number):</label>
-        <input type="text" id="pan" name="pan" readonly><br>
-
-        <label>CRN:</label>
-        <input type="text" id="CRN" name="CRN" readonly><br>
-
-        <label>Response Code:</label>
-        <input type="text" id="rescode" name="rescode" readonly><br>
-
-        <label>Cardholder Name:</label>
-        <input type="text" id="CreditCardAccountName" name="CreditCardAccountName" readonly><br>
-
-        <label>Card Type:</label>
-        <input type="text" id="CardType" name="CardType" readonly><br>
-    </form>
-
-    <script>
-        // Function to get URL parameters and populate form fields
-        function getQueryParams() {
-            const params = new URLSearchParams(window.location.search);
-            
-            document.getElementById("expirydate").value = params.get("expirydate") || "";
-            document.getElementById("callback_status_code").value = params.get("callback_status_code") || "";
-            document.getElementById("restext").value = params.get("restext") || "";
-            document.getElementById("pan").value = params.get("pan") || "";
-            document.getElementById("CRN").value = params.get("CRN") || "";
-            document.getElementById("rescode").value = params.get("rescode") || "";
-            document.getElementById("CreditCardAccountName").value = params.get("CreditCardAccountName") || "";
-            document.getElementById("CardType").value = params.get("CardType") || "";
-        }
-
-        // Call function on page load
-        window.onload = getQueryParams;
-    </script>
+    
+<!-- Hidden iframe to submit form inside -->
+    <!-- <iframe name="nab-iframe" id="nab-iframe" style="width: 100%; height: 400px; border: 1px solid #ccc;"></iframe> -->
+	
+	    <iframe name="nab-iframe" id="nab-iframe" style="width: 100%; height: 400px; border: 1px solid #ccc;" src="https://purple-plant-0e0badc00.6.azurestaticapps.net/index.html"></iframe>
 
 </body>
 </html>
