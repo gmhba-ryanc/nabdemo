@@ -6,24 +6,25 @@
 </head>
 <body>
   <form action="/submit" method="post">
-    <label>Timestamp: <input type="text" name="timestamp" value="20140224221931"></label><br>
-    <label>Callback Status Code: <input type="text" name="callback_status_code" value="200"></label><br>
-    <label>Fingerprint: <input type="text" name="fingerprint" value="c4bfcd6d3ff8ef2b212d563f1054784a85995c21befc4674fc9f89b36962012b"></label><br>
-    <label>Transaction ID: <input type="text" name="txnid" value="726337"></label><br>
-    <label>Merchant: <input type="text" name="merchant" value="XYZ0010"></label><br>
-    <label>Response Text: <input type="text" name="restext" value="Approved"></label><br>
-    <label>Response Code: <input type="text" name="rescode" value="00"></label><br>
-    <label>Expiry Date: <input type="text" name="expirydate" value="052018"></label><br>
-    <label>Settlement Date: <input type="text" name="settdate" value="20140610"></label><br>
-    <label>Reference ID: <input type="text" name="refid" value=" Test Reference"></label><br>
-    <label>PAN: <input type="text" name="pan" value="444433...111"></label><br>
-    <label>Summary Code: <input type="text" name="summarycode" value="1"></label><br>
+    <label>Timestamp: <input type="text" name="timestamp"  id="timestamp" value="20140224221931"></label><br>
+    <label>Callback Status Code: <input type="text" name="callback_status_code" id="callback_status_code"  value="200"></label><br>
+    <label>Fingerprint: <input type="text" name="fingerprint" id="fingerprint" value="c4bfcd6d3ff8ef2b212d563f1054784a85995c21befc4674fc9f89b36962012b"></label><br>
+    <label>Transaction ID: <input type="text" name="txnid" id="txnid" value="726337"></label><br>
+    <label>Merchant: <input type="text" name="merchant" id="merchant" value="XYZ0010"></label><br>
+    <label>Response Text: <input type="text" name="restext" id="restext" value="Approved"></label><br>
+    <label>Response Code: <input type="text" name="rescode" id="rescode" value="00"></label><br>
+    <label>Expiry Date: <input type="text" name="expirydate" id="expirydate" value="052018"></label><br>
+    <label>Settlement Date: <input type="text" name="settdate" id="settdate" value="20140610"></label><br>
+    <label>Reference ID: <input type="text" name="refid" id="refid" value=" Test Reference"></label><br>
+    <label>PAN: <input type="text" name="pan" id="pan" value="444433...111"></label><br>
+    <label>Summary Code: <input type="text" name="summarycode" id="summarycode" value="1"></label><br>
     <button type="submit">Submit</button>
   </form>
   
   <script>
     // Function to get URL parameters and populate form fields
     function getQueryParams() {
+	
         const params = new URLSearchParams(window.location.search);
 
         document.getElementById("timestamp").value = params.get("timestamp") || "";
